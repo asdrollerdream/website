@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<link rel="icon" href="images/logo.webp">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ASD Roller Dream - Privacy Policy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container nav">
+
+            <div class="logo-altrepag">
+                <a href="index.html" class="logo-link">
+                    <img src="images/logo.webp">
+                </a>
+            </div>
+
+            <nav>
+                <ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="staff.html">Staff</a></li>
+					<li><a href="contatti.html">Contatti</a></li>
+					<li><a href="galleria.html">Galleria</a></li>
+                </ul>
+            </nav>
+
+			<div class="menu-toggle">
+				<i class="fa-solid fa-bars"></i>
+			</div>
+
+        </div>
+    </header>
+
+    <section class="hero-altrepag">
+
+        <div class="page-title">
+            <h1>Privacy Policy</h1>
+            <span>ASD Roller Dream</span>
+        </div>
+
+    </section>
+
+	<section class="contenuto-legale">
+
+		<div class="container">
+
+			<h2>Informativa Privacy</h2>
+
+			<p>
+				ASD Roller Dream utilizza questo sito esclusivamente per finalità informative e promozionali delle proprie attività sportive.		
+			</p>
+
+			<p>
+				Il sito non prevede la registrazione degli utenti, aree riservate, 
+				sistemi di iscrizione online o raccolta diretta di dati personali tramite moduli di contatto.
+			</p>
+
+			<p>
+				Gli utenti possono contattare l'associazione tramite telefono, posta elettronica, WhatsApp o social network. 
+				L'eventuale invio di dati personali avviene esclusivamente su iniziativa dell'utente.
+			</p>
+
+			<p>
+				I dati eventualmente comunicati saranno utilizzati unicamente per rispondere alle richieste 
+				ricevute e non saranno diffusi a terzi, salvo obblighi di legge.
+			</p>
+
+			<p>
+				Il sito può includere servizi di terze parti, come Google Maps, necessari alla visualizzazione della sede dell'associazione.
+			</p>
+
+			<p>
+				Per qualsiasi richiesta relativa al trattamento dei dati personali è possibile contattare 
+				ASD Roller Dream tramite i recapiti indicati nella pagina Contatti.
+			</p>
+			
+			<p>
+				Titolare del sito è ASD Roller Dream.
+			</p>	
+
+			<p>
+				Ultimo aggiornamento: Ottobre 2026.
+			</p>
+	
+		</div>
+
+	</section>
+
+	<footer>
+
+		<div class="footer-container">
+			
+			<div class="footer-logo">
+				<img src="images/logo.webp">
+			</div>
+			
+			<div class="footer-info">
+				<h3>ASD Roller Dream</h3>
+				<p>Pattinaggio Artistico a Rotelle</p>
+			</div>
+			
+			<div class="footer-social">
+
+				<a href="https://www.facebook.com/p/Asd-Roller-Dream-100063594159488/?locale=it_IT" target="_blank" rel="noopener noreferrer">
+					<i class="fab fa-facebook-f"></i>
+				</a>
+
+				<a href="https://www.instagram.com/asdrollerdream/?hl=it" target="_blank" rel="noopener noreferrer">
+					<i class="fab fa-instagram"></i>
+				</a>
+
+				<a href="https://api.whatsapp.com/send?phone=+393889267476" target="_blank" rel="noopener noreferrer">
+					<i class="fab fa-whatsapp"></i>
+				</a>
+
+			</div>
+
+			<div class="footer-links">
+				<a href="privacy.html">Privacy Policy</a>
+				<a href="cookie.html">Cookie Policy</a>
+			</div>
+
+			<div class="footer-copy">
+				<p>&copy; 2026 ASD Roller Dream. Tutti i diritti riservati.</p>
+			</div>
+
+		</div>
+
+	</footer>	
+
+	<a href="#" class="back-to-top" aria-label="Torna in alto">
+		<i class="fa-solid fa-chevron-up"></i>
+	</a>	
+
+	<script>	
+		const menuToggle = document.querySelector('.menu-toggle');
+		const menu = document.querySelector('nav');
+		const pageTitle = document.querySelector('.page-title');
+
+		if(menuToggle){
+
+			menuToggle.addEventListener('click', () => {
+
+				menu.classList.toggle('active');
+
+				if(pageTitle){
+					pageTitle.classList.toggle('menu-open');
+				}
+				
+				if(menu.classList.contains('active')){
+					menuToggle.innerHTML =
+						'<i class="fa-solid fa-xmark"></i>';
+				}else{
+					menuToggle.innerHTML =
+						'<i class="fa-solid fa-bars"></i>';
+				}			
+
+			});
+
+		}
+
+		const cards = document.querySelectorAll('.sede-card');
+		const map = document.getElementById('googleMap');
+
+		cards.forEach(card => {
+
+			card.addEventListener('click', () => {
+
+				cards.forEach(c =>
+					c.classList.remove('attiva')
+				);
+
+				card.classList.add('attiva');
+
+				map.src = card.dataset.map;
+
+			});
+
+		});
+
+		const backToTop = document.querySelector('.back-to-top');
+
+		window.addEventListener('scroll', () => {
+
+			if(window.scrollY > 300){
+				backToTop.classList.add('show');
+			}else{
+				backToTop.classList.remove('show');
+			}
+
+		});
+		
+		const header = document.querySelector("header");
+
+		window.addEventListener("scroll", () => {
+
+			if(window.scrollY > 80){
+				header.classList.add("scrolled");
+			}else{
+				header.classList.remove("scrolled");
+			}
+
+		});	
+
+	</script>
+
+</body>
+
+</html>

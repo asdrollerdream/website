@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<link rel="icon" href="images/logo.webp">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ASD Roller Dream - Galleria</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container nav">
+
+            <div class="logo-altrepag">
+                <a href="index.html" class="logo-link">
+                    <img src="images/logo.webp">
+                </a>
+            </div>
+
+            <nav>
+                <ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="staff.html">Staff</a></li>
+					<li><a href="contatti.html">Contatti</a></li>
+					<li><a href="galleria.html" class="active">Galleria</a></li>
+                </ul>
+            </nav>
+
+			<div class="menu-toggle">
+				<i class="fa-solid fa-bars"></i>
+			</div>
+
+        </div>
+    </header>
+
+    <section class="hero-altrepag">
+
+        <div class="page-title">
+            <h1>Galleria</h1>
+            <span>ASD Roller Dream</span>
+        </div>
+
+    </section>
+
+
+	<section class="intro-contatti">
+
+		<div class="presentazione-testo">
+
+
+
+			<h2>IMMAGINE</h2>
+
+			<p class="intro-gallery-title">
+				Rivivi i nostri momenti più belli
+			</p>
+
+			<p class="intro-section">
+				Gare, allenamenti, esibizioni ed eventi che raccontano
+				la passione e l'impegno della famiglia Roller Dream.
+			</p>
+
+		</div>
+
+	</section>
+
+	<section class="gallery-section">
+
+		<div class="container">
+
+			<div id="gallery" class="gallery-grid">
+				<!-- Immagini caricate da Google Drive -->
+			</div>
+
+		</div>
+
+	</section>
+
+	<div class="lightbox">
+
+		<span class="lightbox-close">
+			&times;
+		</span>
+
+		<span class="lightbox-prev">
+			&#10094;
+		</span>
+
+		<img
+			class="lightbox-img"
+			src=""
+			alt="Immagine galleria">
+
+		<span class="lightbox-next">
+			&#10095;
+		</span>
+
+	</div>
+
+	<section class="cta-home cta-inner">
+
+		<div class="container">
+
+			<span class="cta-eyebrow">
+				MOMENTI DA RICORDARE
+			</span>
+
+			<h2>
+				Ogni foto racconta una storia
+			</h2>
+
+			<p>
+				Allenamenti, gare ed esibizioni che raccontano <br> il percorso, l'impegno e la passione dei nostri atleti
+			</p>
+
+		</div>
+
+	</section>
+
+	<footer>
+
+		<div class="footer-container">
+			
+			<div class="footer-logo">
+				<img src="images/logo.webp">
+			</div>
+			
+			<div class="footer-info">
+				<h3>ASD Roller Dream</h3>
+				<p>Pattinaggio Artistico a Rotelle</p>
+			</div>
+			
+			<div class="footer-social">
+
+				<a href="https://www.facebook.com/p/Asd-Roller-Dream-100063594159488/?locale=it_IT" target="_blank" rel="noopener noreferrer">
+					<i class="fab fa-facebook-f"></i>
+				</a>
+
+				<a href="https://www.instagram.com/asdrollerdream/?hl=it" target="_blank" rel="noopener noreferrer">
+					<i class="fab fa-instagram"></i>
+				</a>
+
+				<a href="https://api.whatsapp.com/send?phone=+393889267476" target="_blank" rel="noopener noreferrer">
+					<i class="fab fa-whatsapp"></i>
+				</a>
+
+			</div>
+
+			<div class="footer-links">
+				<a href="privacy.html">Privacy Policy</a>
+				<a href="cookie.html">Cookie Policy</a>
+			</div>
+
+			<div class="footer-copy">
+				<p>&copy; 2026 ASD Roller Dream. Tutti i diritti riservati.</p>
+			</div>
+
+		</div>
+
+	</footer>	
+
+	<a href="#" class="back-to-top" aria-label="Torna in alto">
+		<i class="fa-solid fa-chevron-up"></i>
+	</a>	
+
+	<script>
+
+		const menuToggle = document.querySelector('.menu-toggle');
+		const menu = document.querySelector('nav');
+		const pageTitle = document.querySelector('.page-title');
+
+		if (menuToggle) {
+
+			menuToggle.addEventListener('click', () => {
+
+				menu.classList.toggle('active');
+
+				if (pageTitle) {
+					pageTitle.classList.toggle('menu-open');
+				}
+				
+				if(menu.classList.contains('active')){
+					menuToggle.innerHTML =
+						'<i class="fa-solid fa-xmark"></i>';
+				}else{
+					menuToggle.innerHTML =
+						'<i class="fa-solid fa-bars"></i>';
+				}				
+
+			});
+
+		}
+
+
+		/* ===============================
+		   LIGHTBOX
+		================================ */
+
+		const lightbox = document.querySelector('.lightbox');
+		const lightboxImg = document.querySelector('.lightbox-img');
+		const lightboxClose = document.querySelector('.lightbox-close');
+
+		const lightboxPrev = document.querySelector('.lightbox-prev');
+		const lightboxNext = document.querySelector('.lightbox-next');
+
+		lightboxClose.addEventListener('click', () => {
+			lightbox.classList.remove('show');
+		});
+
+		lightbox.addEventListener('click', (e) => {
+
+			if (e.target === lightbox) {
+				lightbox.classList.remove('show');
+			}
+
+		});
+
+
+		/* ===============================
+		   GALLERIA GOOGLE DRIVE
+		================================ */
+
+		let galleryImages = [];
+		let currentIndex = 0;
+
+		const galleryObserver = new IntersectionObserver((entries) => {
+
+			entries.forEach(entry => {
+
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+				}
+
+			});
+
+		}, {
+			threshold: 0.15
+		});
+
+		document.addEventListener("DOMContentLoaded", async () => {
+
+			const FOLDER_ID = "1Cy2UsIl4r1kVjOLuJZhfjmffqvJ29vF4";
+			const API_KEY = "AIzaSyA0qHoYHXJ9gWktkl2xoA74yvTrfKkDGd8";
+
+			const gallery = document.getElementById("gallery");
+
+			try {
+				
+				const response = await fetch(
+					`https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents+and+trashed=false&orderBy=createdTime desc&key=${API_KEY}&fields=files(id,name,mimeType,thumbnailLink)`
+				);		
+
+				const data = await response.json();
+
+				if (!data.files || data.files.length === 0) {
+					gallery.innerHTML = "<p>Nessuna immagine disponibile.</p>";
+					return;
+				}
+
+				data.files
+					.filter(file => file.mimeType.startsWith("image/"))
+					.forEach(file => {
+						
+						
+						//console.log(file);
+						
+						const item = document.createElement("div");
+						item.className = "gallery-item";
+
+
+						const img = document.createElement("img");
+						
+						gallery.appendChild(item);
+						galleryImages.push(img);			
+
+						img.src = file.thumbnailLink.replace(/=s220$/, '=s1200');
+						img.alt = file.name;
+						img.loading = "lazy";
+						img.decoding = "async";
+
+						img.addEventListener("click", () => {
+							currentIndex = galleryImages.indexOf(img);
+							lightbox.classList.add("show");
+							lightboxImg.src = img.src;
+
+						});
+
+						item.appendChild(img);
+						gallery.appendChild(item);
+
+						galleryObserver.observe(item);
+
+			
+
+					});
+
+			} catch (error) {
+
+				console.error("Errore caricamento galleria:", error);
+
+				gallery.innerHTML =
+					"<p>Impossibile caricare la galleria.</p>";
+
+			}
+
+		});
+
+		lightboxNext.addEventListener('click', () => {
+
+			currentIndex++;
+
+			if (currentIndex >= galleryImages.length) {
+				currentIndex = 0;
+			}
+
+			lightboxImg.src = galleryImages[currentIndex].src;
+
+		});
+
+		lightboxPrev.addEventListener('click', () => {
+
+			currentIndex--;
+
+			if (currentIndex < 0) {
+				currentIndex = galleryImages.length - 1;
+			}
+
+			lightboxImg.src = galleryImages[currentIndex].src;
+
+		});
+
+		const backToTop = document.querySelector('.back-to-top');
+
+		window.addEventListener('scroll', () => {
+
+			if(window.scrollY > 300){
+				backToTop.classList.add('show');
+			}else{
+				backToTop.classList.remove('show');
+			}
+
+		});
+		
+		const header = document.querySelector("header");
+
+		window.addEventListener("scroll", () => {
+
+			if(window.scrollY > 80){
+				header.classList.add("scrolled");
+			}else{
+				header.classList.remove("scrolled");
+			}
+
+		});	
+		
+		const ctaContainer =
+			document.querySelector('.cta-home .container');
+
+		const observerCta = new IntersectionObserver((entries) => {
+
+			entries.forEach((entry) => {
+
+				if(entry.isIntersecting){
+					entry.target.classList.add('visible');
+				}
+
+			});
+
+		}, {
+			threshold: 0.2
+		});
+
+		observerCta.observe(ctaContainer);		
+
+	</script>
+
+</body>
+
+</html>
